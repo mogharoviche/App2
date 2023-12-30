@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Authentification</title>
+		<!-- Inclure la bibliothèque CSS Bootstrap -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	</head>
+	<body class="container my-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<h2 class="text-center">Authentification</h2>
+					<form action="auth.php" method="POST">
+						<div class="form-group">
+							<label>Login</label>
+							<input type="text" name="username" class="form-control" value=""/>
+						</div>
+						<div class="form-group">
+							<label>Passe</label>
+							<input type="password" name="password" class="form-control" value=""/>
+						</div>
+						<button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

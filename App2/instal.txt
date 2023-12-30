@@ -1,0 +1,32 @@
+mise a jour du dépôt de logiciel et mise a niveau système ensuite rebouter le système pour prendre charge le nouveau noyau UNIX s'il y a lieu.
+apt-get update && apt-get upgrade -y && reboot
+
+ensuite installation des prérequis et des outils:
+
+apt-get install build-essential wget libssl-dev libncurses5-dev libnewt-dev  libxml2-dev linux-headers-$(uname -r) libsqlite3-dev uuid-dev
+dans le repertopire 
+cd /usr/src/
+
+en télécharge les librairies:
+wget http://41.214.147.94/dahdi-linux-complete-current.tar.gz
+wget http://41.214.147.94/libpri-current.tar.gz
+wget http://41.214.147.94/asterisk-11-current.tar.gz
+
+decompression des differentes lib:
+
+tar zxvf dahdi-linux-complete*
+tar zxvf libpri*
+tar zxvf asterisk*
+Installation DAHDI 
+
+cd /usr/src/dahdi-linux-complete* 
+make && make install && make config
+
+installation LibPri
+cd /usr/src/libpri*
+make && make install
+
+Installation Asterisk 
+
+cd /usr/src/asterisk*
+./configure && make menuselect && make && make install && make config && make samples
